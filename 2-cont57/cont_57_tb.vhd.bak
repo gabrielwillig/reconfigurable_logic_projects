@@ -1,0 +1,67 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity cont_57_tb is
+end entity;
+
+architecture test of cont_57_tb is
+    component cont_57
+        port (
+            RST  : in std_logic;
+            CLK  : in std_logic;
+            EN   : in std_logic;
+            CLR  : in std_logic;
+            LD   : in std_logic;
+            Q    : out std_logic_vector(7 downto 0)
+        );
+    end component;
+
+    signal CLK, CLR, RST, EN, LD : std_logic := '0';
+    signal Q : std_logic_vector(7 downto 0);
+
+begin
+    -- Instanciação do componente a ser testado
+    DUT: cont_57 port map (
+        RST => RST,
+        CLK => CLK,
+        CLR => CLR,
+        EN => EN,
+        LD => LD,
+        Q => Q
+    );
+
+    CLK_gen: process
+    begin
+        CLK <= '0';
+        wait for 10 ns;
+        CLK <= '1';
+        wait for 10 ns;
+    end process;
+    
+    RST_gen: process
+    begin 
+        RST <= '1';
+        wait for 20 ns;
+        RST <= '0';
+        wait;
+    end process;
+
+    EN_gen: process
+    begin
+        EN <= '1';
+        wait for 2000 ns; 
+        EN <= '0';
+        wait;
+    end process;
+
+    CLR_gen: process
+    begin
+        CLR <= '0';
+        wait for 1000 ns;
+        CLR <= '1';
+        wait for 20 ns;
+        CLR <= '0';
+        wait;
+    end process;
+
+end architecture;

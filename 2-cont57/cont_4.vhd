@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 -- Gabriel Freitas Willig
 
-Entity cont4 is
+Entity cont_4 is
    PORT(RST  : in std_logic;
         CLK  : in std_logic;
         Q    : out std_logic_vector(3 downto 0);
@@ -12,7 +12,7 @@ Entity cont4 is
         LD   : in std_logic;
         LOAD : in std_logic_vector (3 downto 0));
 end entity;
-Architecture X of cont4 is
+Architecture X of cont_4 is
 Signal CONT: std_logic_vector (3 downto 0);
 Begin
 Process (CLK, RST)
