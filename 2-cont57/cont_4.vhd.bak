@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity cont_4bit is
+    Port ( CLK, CLR, EN : in STD_LOGIC;
+           Q : out STD_LOGIC_VECTOR (3 downto 0));
+end cont_4bit;
+
+architecture Behavioral of cont_4bit is
+    signal count : STD_LOGIC_VECTOR(3 downto 0) := "0000";
+begin
+    process(CLK, CLR)
+    begin
+        if CLR = '1' then
+            count <= "0000";
+        elsif rising_edge(CLK) then
+            if EN = '1' then
+                if count = "1001" then
+                    count <= "0000";
+                else
+                    count <= count + 1;
+                end if;
+            end if;
+        end if;
+    end process;
+    Q <= count;
+end Behavioral;
