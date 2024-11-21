@@ -1,0 +1,33 @@
+Library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+-- Gabriel Freitas Willig
+Entity cont_4 is
+   PORT(RST  : in std_logic;
+        CLK  : in std_logic;
+        INP  : in std_logic_vector (3 downto 0);
+		);
+end entity;
+Architecture X of cont_4 is
+Signal CONT: std_logic_vector (3 downto 0);
+Begin
+Process (CLK, RST)
+   Begin
+	If RST = '1' then
+	   CONT <= "0000";
+	Elsif CLK' event and CLK = '1' then
+	   If CLR = '1'then
+		CONT <= "0000";
+	   Else
+			If EN = '1' then
+				If LD = '1' then
+					CONT <= LOAD;
+				Else
+					CONT <= std_logic_vector(unsigned(CONT)+1);
+				End IF;
+			End If;
+	   End If;
+	End If;
+End process;
+Q <= CONT;
+End architecture;
