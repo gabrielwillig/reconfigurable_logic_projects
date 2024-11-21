@@ -8,37 +8,32 @@ end entity;
 Architecture test of cont_4_tb is
 
 component cont_4 is
-   PORT(RST  : in std_logic;
-        CLK  : in std_logic;
-        Q    : out std_logic_vector(3 downto 0);
-        EN   : in std_logic;
-        CLR  : in std_logic;
-        LD   : in std_logic;
-        LOAD : in std_logic_vector (3 downto 0));
+	PORT(CLK  		 : in std_logic;
+		INP  		 : in std_logic_vector (3 downto 0);
+		Q_FOR        : out std_logic_vector(2 downto 0);
+		Q_WHILE      : out std_logic_vector(2 downto 0);
+		Q_CASE_WHEN  : out std_logic_vector(2 downto 0);
+		Q_IF_THEN    : out std_logic_vector(2 downto 0);
+		Q_DIRECT_SUM : out std_logic_vector(2 downto 0)
+	);
 end component;
 
-signal rst, clk, en, ld, clr: std_logic;
-signal LOAD, Q : std_logic_vector (3 downto 0);
+signal clk     : std_logic;
+signal inp     : std_logic_vector (3 downto 0);
+signal q_for, q_while, q_case_when, q_if_then, q_direct_sum : std_logic_vector (2 downto 0);
 begin
 
 -- instanciação do componente a ser testado
 DUT: cont_4
 	port map(
-		RST => rst,
 		CLK => clk,
-		Q   => Q  ,
-		EN  => EN ,
-		CLR => CLR,
-		LD	 => LD ,
-		LOAD=> LOAD
+		INP => inp,
+		Q_FOR         => q_for,
+		Q_WHILE       => q_while,
+		Q_CASE_WHEN   => q_case_when
+		Q_IF_THEN     => q_if_then,
+		Q_DIRECT_SUM  => q_direct_sum
 	);
-rst_gen: Process
-begin 
-	rst <= '1';
-	wait for 15 ns;
-	rst <= '0';
-	wait;
-End process;
 
 clk_gen: Process
 begin 
@@ -48,26 +43,41 @@ begin
 	wait for 10 ns;
 End process;
 
-en_gen: process
+inp_gen: Process
 begin
-	en <= '1';
-	wait for 185 ns;
-	en <= '0';
-	wait;
-end process;
-
-clr_gen: process
-begin
-	clr <= '0'; -- Baixo até 75
-	wait for 75 ns;
-	clr <= '1'; -- Alto entre 75 e 95
+	wait for 15 ns;
+	inp <= "0000";
 	wait for 20 ns;
-	clr <= '0'; -- Baixo entre 95 e 125
-	wait for 30 ns;
-	clr <= '1'; -- Alto entre 125 e 145
+	inp <= "0001";
 	wait for 20 ns;
-	clr <= '0'; -- Baixo no restante
+	inp <= "0010";
+	wait for 20 ns;
+	inp <= "0011";
+	wait for 20 ns;
+	inp <= "0100";
+	wait for 20 ns;
+	inp <= "0101";
+	wait for 20 ns;
+	inp <= "0110";
+	wait for 20 ns;
+	inp <= "0111";
+	wait for 20 ns;
+	inp <= "1000";
+	wait for 20 ns;
+	inp <= "1001";
+	wait for 20 ns;
+	inp <= "1010";
+	wait for 20 ns;
+	inp <= "1011";
+	wait for 20 ns;
+	inp <= "1100";
+	wait for 20 ns;
+	inp <= "1101";
+	wait for 20 ns;
+	inp <= "1110";
+	wait for 20 ns;
+	inp <= "1111";
 	wait;
-end process;
+End process;	
 
 End architecture;

@@ -11,16 +11,16 @@ end entity;
 Architecture X of cont_for is
 Begin
 	Process(CLK)
-		Variable CONT : std_logic_vector(2 downto 0) := "000";
+		Variable CONT : integer range 0 to 4 := 0;
 	Begin
 		If rising_edge(CLK) then
-			CONT := "000";
-			 For itr in 0 to 3 loop
-				If INP(itr) = '1' then
-					CONT := std_logic_vector(unsigned(CONT)+1);
+			CONT := 0;
+			 For ITR in 0 to 3 loop
+				If INP(ITR) = '1' then
+					CONT := CONT + 1;
 				End If;
 			End loop;
-			Q <= CONT;
 		End If;
+		Q <= std_logic_vector(to_unsigned(CONT, Q'length));
 	End process;
-End X;
+End architecture;

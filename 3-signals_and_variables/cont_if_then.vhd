@@ -11,45 +11,24 @@ end entity;
 Architecture X of cont_if_then is
     Signal CONT: integer range 0 to 4 := 0;
 Begin
-	Process(CLK)
-	Begin
+    Process(CLK)
+    Begin
         If rising_edge(CLK) then
-			If input = "0000" then
-				CONT <= 0;
-            Elsif input = "0001" then
+            If INP = "0000" then
+                CONT <= 0;
+            Elsif INP = "0001" or INP = "0010" or INP = "0100" or INP = "1000" then
                 CONT <= 1;
-            Elsif input = "0010" then
-                CONT <= 1;
-            Elsif input = "0011" then
+            Elsif INP = "0011" or INP = "0101" or INP = "0110" or INP = "1001" or
+                INP = "1010" or INP = "1100" then
                 CONT <= 2;
-            Elsif input = "0100" then
-                CONT <= 1;
-            Elsif input = "0101" then
-                CONT <= 2;
-            Elsif input = "0110" then
-                CONT <= 2;
-            Elsif input = "0111" then
+            Elsif INP = "0111" or INP = "1011" or INP = "1101" or INP = "1110" then
                 CONT <= 3;
-            Elsif input = "1000" then
-                CONT <= 1;
-            Elsif input = "1001" then
-                CONT <= 2;
-            Elsif input = "1010" then
-                CONT <= 2;
-            Elsif input = "1011" then
-                CONT <= 3;
-            Elsif input = "1100" then
-                CONT <= 2;
-            Elsif input = "1101" then
-                CONT <= 3;
-            Elsif input = "1110" then
-                CONT <= 3;
-            Elsif input = "1111" then
+            Elsif INP = "1111" then
                 CONT <= 4;
             Else
                 CONT <= 0;
             End If;
-        End If ;
-	End process;
-    Q <= std_logic_vector(to_unsigned(CONT, 3));
-End X;
+        End If;
+    End process;
+    Q <= std_logic_vector(to_unsigned(CONT, Q'length));
+End architecture;

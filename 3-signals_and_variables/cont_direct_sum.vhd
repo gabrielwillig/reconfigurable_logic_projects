@@ -14,10 +14,11 @@ Begin
 	Process(CLK)
 	Begin
         If rising_edge(CLK) then
-            CONT <= to_integer(unsigned(input(0 downto 0))) 
-                        + to_integer(unsigned(input(1 downto 1))) 
-                        + to_integer(unsigned(input(2 downto 2))) 
-                        + to_integer(unsigned(input(3 downto 3)));
+            CONT <= to_integer(unsigned(INP(0))) 
+                    + to_integer(unsigned(INP(1))) 
+                    + to_integer(unsigned(INP(2))) 
+                    + to_integer(unsigned(INP(3)));
         End If ;
 	End process;
-End X;
+    Q <= std_logic_vector(to_unsigned(CONT, Q'length));
+End architecture;

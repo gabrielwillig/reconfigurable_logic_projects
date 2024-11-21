@@ -24,6 +24,6 @@ Begin
                 ITR := ITR + 1;
 			End loop;
 		End If;
+		Q <= std_logic_vector(to_unsigned(CONT, 3));
 	End process;
-	Q <= str_logic_vetctor(to_unsigned(CONT, 3));
-End X;
+End architecture;
