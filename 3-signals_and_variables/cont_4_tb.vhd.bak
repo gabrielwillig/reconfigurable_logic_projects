@@ -23,14 +23,14 @@ signal inp     : std_logic_vector (3 downto 0);
 signal q_for, q_while, q_case_when, q_if_then, q_direct_sum : std_logic_vector (2 downto 0);
 begin
 
--- instanciacao do componente a ser testado
+-- instanciação do componente a ser testado
 DUT: cont_4
 	port map(
 		CLK => clk,
 		INP => inp,
 		Q_FOR         => q_for,
 		Q_WHILE       => q_while,
-		Q_CASE_WHEN   => q_case_when,
+		Q_CASE_WHEN   => q_case_when
 		Q_IF_THEN     => q_if_then,
 		Q_DIRECT_SUM  => q_direct_sum
 	);
@@ -43,18 +43,41 @@ begin
 	wait for 10 ns;
 End process;
 
- inp_gen: Process
-	  variable i : integer := 0;
-	  variable loop_count : integer := 0;
- begin
-	  while loop_count < 10 loop -- repete 10 vezes
-			for j in 0 to 15 loop -- conta de "0000" a "1111"
-				 inp <= std_logic_vector(to_unsigned(j, inp'length));
-				 wait for 20 ns;
-			end loop;
-			loop_count := loop_count + 1;
-	  end loop;
-	  wait;
- End process;
+inp_gen: Process
+begin
+	wait for 15 ns;
+	inp <= "0000";
+	wait for 20 ns;
+	inp <= "0001";
+	wait for 20 ns;
+	inp <= "0010";
+	wait for 20 ns;
+	inp <= "0011";
+	wait for 20 ns;
+	inp <= "0100";
+	wait for 20 ns;
+	inp <= "0101";
+	wait for 20 ns;
+	inp <= "0110";
+	wait for 20 ns;
+	inp <= "0111";
+	wait for 20 ns;
+	inp <= "1000";
+	wait for 20 ns;
+	inp <= "1001";
+	wait for 20 ns;
+	inp <= "1010";
+	wait for 20 ns;
+	inp <= "1011";
+	wait for 20 ns;
+	inp <= "1100";
+	wait for 20 ns;
+	inp <= "1101";
+	wait for 20 ns;
+	inp <= "1110";
+	wait for 20 ns;
+	inp <= "1111";
+	wait;
+End process;	
 
 End architecture;

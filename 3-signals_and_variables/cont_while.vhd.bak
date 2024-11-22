@@ -19,7 +19,7 @@ Begin
             ITR  := 0;
 			While ITR < 4 loop
 				If INP(ITR) = '1' then
-					CONT := CONT + 1;
+					CONT := CONT + 1.
 				End If;
                 ITR := ITR + 1;
 			End loop;

@@ -1,0 +1,2 @@
+Comparar, para o exercício, a frequência máxima obtida na simulação gate_level (com alguns cálculos adicionais) com a fornecida pelo Quartus. Mencionar a diferença de tempo de propagação das diversas opções.
+Em ordem crescente do tempo de propagação: SIGNALS (soma direta com conversão direta dos bits de entrada), SIGNALS (case/when), SIGNALS (IF then), VARIÁVEIS  FOR, VARIÁVEIS  WHILE.

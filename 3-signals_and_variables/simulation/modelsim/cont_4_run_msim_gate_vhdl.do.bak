@@ -1,0 +1,17 @@
+transcript on
+if {[file exists gate_work]} {
+    vdel -lib gate_work -all
+}
+vlib gate_work
+vmap work gate_work
+
+vcom -93 -work work {cont_4.vho}
+vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4_tb.vhd}
+
+# Certifique-se de que o caminho para o arquivo SDF e a instância estão corretos
+vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /top_level_instance=cont_4_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc" cont_4_tb
+
+add wave *
+view structure
+view signals
+run -all
