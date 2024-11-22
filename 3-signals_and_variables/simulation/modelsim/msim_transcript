@@ -41,94 +41,8 @@ vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFP
 # -- Loading package NUMERIC_STD
 # -- Compiling entity cont_4_tb
 # -- Compiling architecture test of cont_4_tb
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneii_atom_pack
-# -- Loading package cycloneii_components
-# -- Compiling entity cont_4
-# -- Compiling architecture structure of cont_4
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4_tb.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4_tb
-# -- Compiling architecture test of cont_4_tb
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_case_when.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_case_when
-# -- Compiling architecture X of cont_case_when
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_direct_sum.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_direct_sum
-# -- Compiling architecture X of cont_direct_sum
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_for.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_for
-# -- Compiling architecture X of cont_for
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_if_then.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_if_then
-# -- Compiling architecture X of cont_if_then
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_while.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_while
-# -- Compiling architecture X of cont_while
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4
-# -- Compiling architecture X of cont_4
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneii_atom_pack
-# -- Loading package cycloneii_components
-# -- Compiling entity cont_4
-# -- Compiling architecture structure of cont_4
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4_tb.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4_tb
-# -- Compiling architecture test of cont_4_tb
-vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui gate_work.cont_4_tb
-# vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui gate_work.cont_4_tb 
+vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/DUT=C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4_vhd.sdo} gate_work.cont_4_tb
+# vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui -sdftyp {/DUT=C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4_vhd.sdo} gate_work.cont_4_tb 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -149,6 +63,10 @@ vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui gate_work.
 # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
 # Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
 # Loading cycloneii.cycloneii_and1(altvital)
+# Loading instances from C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4_vhd.sdo
+# Loading timing data from C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4_vhd.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /cont_4_tb File: C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4_tb.vhd
 # do cont_4_run_msim_gate_vhdl.do 
 # if {[file exists gate_work]} {
 # 	vdel -lib gate_work -all
@@ -178,137 +96,4 @@ sim:/cont_4_tb/q_case_when \
 sim:/cont_4_tb/q_if_then \
 sim:/cont_4_tb/q_direct_sum
 run 5ms
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4
-# -- Compiling architecture X of cont_4
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_case_when.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_case_when
-# -- Compiling architecture X of cont_case_when
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_direct_sum.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_direct_sum
-# -- Compiling architecture X of cont_direct_sum
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_for.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_for
-# -- Compiling architecture X of cont_for
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_if_then.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_if_then
-# -- Compiling architecture X of cont_if_then
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_while.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_while
-# -- Compiling architecture X of cont_while
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4
-# -- Compiling architecture X of cont_4
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/simulation/modelsim/cont_4.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneii_atom_pack
-# -- Loading package cycloneii_components
-# -- Compiling entity cont_4
-# -- Compiling architecture structure of cont_4
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4_tb.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4_tb
-# -- Compiling architecture test of cont_4_tb
-vcom -reportprogress 300 -work gate_work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/3-signals_and_variables/cont_4_tb.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity cont_4_tb
-# -- Compiling architecture test of cont_4_tb
-vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui gate_work.cont_4_tb
-# vsim +altera -do cont_4_run_msim_gate_vhdl.do -l msim_transcript -gui gate_work.cont_4_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading gate_work.cont_4_tb(test)
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading cycloneii.cycloneii_atom_pack(body)
-# Loading cycloneii.cycloneii_components
-# Loading gate_work.cont_4(structure)
-# Loading ieee.std_logic_arith(body)
-# Loading cycloneii.cycloneii_io(structure)
-# Loading cycloneii.cycloneii_mux21(altvital)
-# Loading cycloneii.cycloneii_dffe(behave)
-# Loading cycloneii.cycloneii_asynch_io(behave)
-# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
-# Loading cycloneii.cycloneii_ena_reg(behave)
-# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
-# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
-# Loading cycloneii.cycloneii_and1(altvital)
-# do cont_4_run_msim_gate_vhdl.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
-# }
-# vlib gate_work
-# vmap work gate_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {cont_4.vho}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package VITAL_Timing
-# -- Loading package VITAL_Primitives
-# -- Loading package cycloneii_atom_pack
-# -- Loading package cycloneii_components
-# -- Compiling entity cont_4
-# -- Compiling architecture structure of cont_4
-# 
-add wave -position insertpoint  \
-sim:/cont_4_tb/clk \
-sim:/cont_4_tb/inp \
-sim:/cont_4_tb/q_for \
-sim:/cont_4_tb/q_while \
-sim:/cont_4_tb/q_case_when \
-sim:/cont_4_tb/q_if_then \
-sim:/cont_4_tb/q_direct_sum
-run 5ms
+# WARNING: No extended dataflow license exists

@@ -24,7 +24,7 @@ signal q_for, q_while, q_case_when, q_if_then, q_direct_sum : std_logic_vector (
 begin
 
 -- instanciacao do componente a ser testado
-DUT: cont_4
+DUT : cont_4
 	port map(
 		CLK => clk,
 		INP => inp,
