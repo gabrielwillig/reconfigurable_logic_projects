@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.ALL;
+-- Gabriel Freitas Willig
+Entity CLK_10ms is
+    PORT ( 
+        CLK	: in std_logic;
+        Q   : out std_logic
+    );
+
+end entity;
+Architecture X of CLK_10ms is
+Signal CONT: integer := 1;
+Signal INVERTER : std_logic := '0';
+Begin
+	 
+Process(CLK)
+begin -- 10ms
+    If rising_edge(CLK) then
+        CONT <= CONT+1;
+        If (CONT = 50000000/200) then
+            INVERTER <= NOT INVERTER;
+            CONT <= 0;
+        End If;
+    End If;
+End process;
+
+Q <= INVERTER;
+	
+End architecture;
