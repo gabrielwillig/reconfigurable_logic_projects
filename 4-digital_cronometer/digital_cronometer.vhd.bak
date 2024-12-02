@@ -10,7 +10,6 @@ Entity digital_cronometer is
 		SWITCH           :	 IN std_logic;
 		Q_M, Q_L         :   OUT std_logic_vector(6 downto 0);
 		Q_CENT_M, Q_CENT_L : OUT std_logic_vector(6 downto 0)
-
     );
 End entity;
 Architecture X of digital_cronometer is
@@ -47,7 +46,7 @@ component decoder_7seg is
         );
 End component; 
     
-component clk_divider is
+component clk_gen is
     port( 
         CLK	: IN std_logic;
         Q	: OUT std_logic
@@ -57,11 +56,11 @@ End component;
 
 Begin
 
-	Process(SWITCH, CLK)
+	Process(CLK)
 	Begin
-      	If (SWITCH='1') then
+        f (SWITCH='1') then
             STATE <= "00";
-		Elsif rising_edge(CLK) then
+		If rising_edge(CLK) then
 			If (STATE = "00") then -- Inicial
                 If (SW_1='0') then
                     STATE <= "01"; -- Contando
@@ -85,22 +84,22 @@ Begin
 	EN_SEC <= '1' when CONT_L_CENT="1001" and CONT_M_CENT = "1001"
 					else '0';
 
-	clock_divider : clk_divider port map(
+	clock_gen : clk_gen port map(
 		CLK  => CLK,
 		Q    => CLOCK
 	);
 
 	cont_seconds : cont_sec port map(
-		CLK => CLK,
+		CLK => CLOCK,
 		RST => SWITCH,
-		EN => EN_SEC,
+		EN => EN,
 		CLR => CLR,
 		Q_M => CONT_M_SEC,
 		Q_L => CONT_L_SEC
 	);
  
 	cont_hundredths : cont_cent port map(
-		CLK => CLK,
+		CLK => CLOCK,
 		RST => SWITCH,
 		EN => EN,
 		CLR => CLR,
@@ -108,24 +107,24 @@ Begin
 		Q_L => CONT_L_CENT
 	 );
 	 
-   decoder_m_sec : decoder_7seg port map(
-       INPT => CONT_M_SEC,
-       OUTT => Q_M
+    decoder_m_sec : decoder_7seg port map(
+        INPT => CONT_M_SEC,
+        OUTT => Q_M
 	 );
 	 
-   decoder_l_sec : decoder_7seg port map(
-       INPT => CONT_L_SEC,
-       OUTT => Q_L
+    decoder_l_sec : decoder_7seg port map(
+        INPT => CONT_L_SEC,
+        OUTT => Q_L
 	 );
 	 
-   decoder_m_cent : decoder_7seg port map(
-       INPT => CONT_M_CENT,
-       OUTT => Q_CENT_M
+    decoder_m_cent : decoder_7seg port map(
+        INPT => CONT_M_CENT,
+        OUTT => Q_CENT_M
 	 );
 	 
-    decoder_l_cent : decoder_7seg port map(
-       INPT => CONT_L_CENT,
-       OUTT => Q_CENT_L
+     decoder_l_cent : decoder_7seg port map(
+        INPT => CONT_L_CENT,
+        OUTT => Q_CENT_L
 	 );
 	
 End architecture;

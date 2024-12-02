@@ -13,8 +13,6 @@ end entity decoder_7seg;
 Architecture decoder_7seg_arch of decoder_7seg is
 
 Begin
-    Process(INPT)
-	 Begin
     Case INPT is
         When "0000" => OUTT <= "0000001"; -- 0
         When "0001" => OUTT <= "1001111"; -- 1
@@ -34,5 +32,4 @@ Begin
         When "1111" => OUTT <= "0111000"; -- F
         When Others => OUTT <= "XXXXXXX";
     End Case;
-	 End Process;
 end architecture;

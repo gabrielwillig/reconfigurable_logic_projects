@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 -- Gabriel Freitas Willig
-Entity CLK_10ms is
+Entity clk_divider is
     PORT ( 
         CLK	: in std_logic;
         Q   : out std_logic
     );
 
 end entity;
-Architecture X of CLK_10ms is
+Architecture X of clk_divider is
 Signal CONT: integer := 1;
 Signal INVERTER : std_logic := '0';
 Begin

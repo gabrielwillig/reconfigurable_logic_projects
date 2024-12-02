@@ -13,7 +13,7 @@ Entity cont_sec is
 end entity;
 Architecture X of cont_sec is
 SIGNAL en_m, clr_l, ld : std_logic;
-SIGNAL q_m, q_l		    : std_logic_vector(3 downto 0);
+SIGNAL cont_m, cont_l		    : std_logic_vector(3 downto 0);
 SIGNAL ld_m, ld_l		: std_logic_vector(3 downto 0);
 
     Component cont_4 is
@@ -33,33 +33,33 @@ Begin
 ld_m <= "0000";
 ld_l <= "0000";
 
-CONT_M:cont_4 port map(
+CONT_M_PM:cont_4 port map(
 	CLK   =>  CLK,
 	RST   =>  RST,
 	EN    =>  en_m,
 	LD    =>  ld,
 	LOAD  =>  ld_m,
-	Q     =>  q_m,
+	Q     =>  cont_m,
 	CLR	  =>  CLR
 );
 
-CONT_L:cont_4 port map(
+CONT_L_PM:cont_4 port map(
 	CLK   =>  CLK,
 	RST   =>  RST,
-	EN    =>  en_l,
+	EN    =>  EN,
 	LD	  =>  ld,
 	LOAD  =>  ld_l,
-	Q     =>  q_l,
+	Q     =>  cont_l,
 	CLR	  =>  clr_l
 );
 
 clr_l <= en_m or CLR;
--- ld quando for de passo '5''10' -> '0' '0'
-ld <= '1' when q_m = "0101" and q_l = "1010" else '0';
+-- ld quando for de passo '5''10' -> '0''0'
+ld <= '1' when cont_m = "0101" and cont_l = "1001" else '0';
 -- habilita contador mais significativo quando contador menos atingir 10
-en_m <= '1' when q_l = "1001" else '0';
+en_m <= '1' when cont_l = "1001" and EN = '1' else '0';
 	
-Q_M <= q_m;
-Q_L <= q_l;
+Q_M <= cont_m;
+Q_L <= cont_l;
 
 End architecture;

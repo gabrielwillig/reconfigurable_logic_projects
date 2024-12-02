@@ -1,0 +1,132 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do digital_cronometer_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/clk_divider.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clk_divider
+# -- Compiling architecture X of clk_divider
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/digital_cronometer.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity digital_cronometer
+# -- Compiling architecture X of digital_cronometer
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/cont_sec.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_sec
+# -- Compiling architecture X of cont_sec
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/cont_cent.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_cent
+# -- Compiling architecture X of cont_cent
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/cont_4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_4
+# -- Compiling architecture X of cont_4
+# 
+vcom -reportprogress 300 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/digital_cronometer_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity digital_cronometer_tb
+# -- Compiling architecture test of digital_cronometer_tb
+vsim +altera -do digital_cronometer_run_msim_rtl_vhdl.do -l msim_transcript -gui work.digital_cronometer_tb
+# vsim +altera -do digital_cronometer_run_msim_rtl_vhdl.do -l msim_transcript -gui work.digital_cronometer_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.digital_cronometer_tb(test)
+# Loading work.digital_cronometer(x)
+# Loading work.clk_divider(x)
+# Loading work.cont_sec(x)
+# Loading work.cont_4(x)
+# Loading work.cont_cent(x)
+# do digital_cronometer_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/clk_divider.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clk_divider
+# -- Compiling architecture X of clk_divider
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/digital_cronometer.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity digital_cronometer
+# -- Compiling architecture X of digital_cronometer
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/cont_sec.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_sec
+# -- Compiling architecture X of cont_sec
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/cont_cent.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_cent
+# -- Compiling architecture X of cont_cent
+# vcom -93 -work work {C:/Users/Gabriel Willig/Documents/UTFPR/8PERIODO/reconfigurable_logic_projects/4-digital_cronometer/cont_4.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cont_4
+# -- Compiling architecture X of cont_4
+# 
+add wave -position insertpoint  \
+sim:/digital_cronometer_tb/RST \
+sim:/digital_cronometer_tb/CLOCK \
+sim:/digital_cronometer_tb/SW1 \
+sim:/digital_cronometer_tb/SW2 \
+sim:/digital_cronometer_tb/M_SEC \
+sim:/digital_cronometer_tb/L_SEC \
+sim:/digital_cronometer_tb/M_CENT \
+sim:/digital_cronometer_tb/L_CENT
+run 1ms

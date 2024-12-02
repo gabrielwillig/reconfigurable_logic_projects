@@ -11,15 +11,15 @@ component digital_cronometer is
 		SW_1             :   IN std_logic;
 		SW_2             :   IN std_logic;
 		SWITCH           :	 IN std_logic;
-		Q_M, Q_L         :   OUT std_logic_vector(6 downto 0);
-		Q_CENT_M, Q_CENT_L : OUT std_logic_vector(6 downto 0)
+		Q_M, Q_L         :   OUT std_logic_vector(3 downto 0);
+		Q_CENT_M, Q_CENT_L : OUT std_logic_vector(3 downto 0)
     );
 End component;
 signal   RST:	        std_logic := '1';
 signal   CLOCK:      		std_logic;
 signal   SW1, SW2:   	std_logic := '0';
-signal   M_SEC,L_SEC:	std_logic_vector(6 downto 0);
-signal   M_CENT,L_CENT:	std_logic_vector(6 downto 0);
+signal   M_SEC,L_SEC:	std_logic_vector(3 downto 0);
+signal   M_CENT,L_CENT:	std_logic_vector(3 downto 0);
 
 Begin
     DUT: digital_cronometer port map(
@@ -53,7 +53,7 @@ Begin
     process
     begin
       RST <= '1';
-      wait for 25 ns;
+      wait for 25ns;
       RST <= '0';
       wait;
     end process;
@@ -62,9 +62,9 @@ Begin
     begin
       while true loop
         CLOCK <= '0';
-        wait for 10 ns;
+        wait for 10ns;
         CLOCK <= '1';
-        wait for 10 ns;
+        wait for 10ns;
       end loop;
       wait;
     end process;
