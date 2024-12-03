@@ -5,8 +5,8 @@ use IEEE.numeric_std.all;
 Entity digital_cronometer is
 	port(   
 		CLK              :   IN  std_logic;
-		SW_1             :   IN std_logic;
-		SW_2             :   IN std_logic;
+		PB_0             :   IN std_logic;
+		PB_1             :   IN std_logic;
 		SWITCH           :	 IN std_logic;
 		Q_M, Q_L         :   OUT std_logic_vector(6 downto 0);
 		Q_CENT_M, Q_CENT_L : OUT std_logic_vector(6 downto 0)
@@ -16,7 +16,7 @@ End entity;
 Architecture X of digital_cronometer is
 signal CLOCK, EN_SEC: std_logic;
 signal CLR, EN      : std_logic := '0';
-signal STATE        : std_logic_vector(1 downto 0):= "00"; -- 3 STATEs
+signal STATE        : std_logic_vector(1 downto 0):= "00"; -- 3 STATES - Inicial / Rodando / Pausado
 signal CONT_L_SEC, CONT_M_SEC  : std_logic_vector(3 downto 0);
 signal CONT_L_CENT, CONT_M_CENT:	std_logic_vector(3 downto 0);
 
@@ -63,17 +63,17 @@ Begin
             STATE <= "00";
 		Elsif rising_edge(CLK) then
 			If (STATE = "00") then -- Inicial
-                If (SW_1='0') then
+                If (PB_0='0') then
                     STATE <= "01"; -- Contando
                 End If;
 			Elsif (STATE = "01") then
-                If (SW_1 = '0') then
+                If (PB_0 = '0') then
                     STATE <= "10"; -- Pausando
                 End If;
 			Elsif (STATE = "10" or STATE="11") then -- Pausado
-				 If (SW_1 = '0') then
+				 If (PB_0 = '0') then
 					  STATE <= "01"; -- Contando
-				 Elsif (SW_2 = '0') then
+				 Elsif (PB_1 = '0') then
 					  STATE <= "11"; -- Limpando
 				 End If;
 			End If;
@@ -91,7 +91,7 @@ Begin
 	);
 
 	cont_seconds : cont_sec port map(
-		CLK => CLK,
+		CLK => CLOCK,
 		RST => SWITCH,
 		EN => EN_SEC,
 		CLR => CLR,
@@ -100,7 +100,7 @@ Begin
 	);
  
 	cont_hundredths : cont_cent port map(
-		CLK => CLK,
+		CLK => CLOCK,
 		RST => SWITCH,
 		EN => EN,
 		CLR => CLR,
